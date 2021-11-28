@@ -1,0 +1,42 @@
+---
+title: "trial"
+author: "Maria Laricheva"
+date: "24/11/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(RColorBrewer)
+```
+
+Reading data:
+
+```{r}
+data <- read.csv("data/rain_data.csv")
+data <- data %>% select(-X)
+filtered <- data %>%
+  filter(year == 2020, month ==4)
+
+  ggplot() + 
+  geom_col(aes(x = day, y = rain, fill = rain)) +
+  scale_fill_gradient(
+    low ="lightblue1", high = "lightsteelblue4")+
+  theme_minimal()
+```
+
+```{r}
+mean_rain <- data %>% 
+            group_by(month) %>%
+            summarise(mean = mean(rain, na.rm = TRUE)) %>%
+            filter(month == 1)
+
+mean_rain$cur_mean <- 1
+mean_rain
+```
+```{r}
+mean <- mean(filtered$rain)
+mean
+```
+

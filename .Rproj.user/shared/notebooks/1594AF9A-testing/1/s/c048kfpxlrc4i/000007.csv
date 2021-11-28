@@ -1,0 +1,12 @@
+"0","data <- read.csv(""data/rain_data.csv"")"
+"0","data <- data %>% select(-X)"
+"0","filtered <- data %>%"
+"0","  filter(year == 2020, month ==4)"
+"0",""
+"0","  ggplot() + "
+"0","  geom_col(aes(x = day, y = rain, fill = rain)) +"
+"0","  scale_fill_gradient("
+"0","    low =""lightblue1"", high = ""lightsteelblue4"")+"
+"0","  theme_minimal()"
+"2","Error in FUN(X[[i]], ...) : object 'day' not found
+"

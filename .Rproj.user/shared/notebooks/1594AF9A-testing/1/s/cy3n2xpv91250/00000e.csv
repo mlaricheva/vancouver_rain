@@ -1,0 +1,7 @@
+"0","mean_rain <- data %>% "
+"0","            group_by(month) %>%"
+"0","            summarise(mean = mean(rain, na.rm = TRUE)) %>%"
+"0","            filter(month == 1)"
+"0",""
+"0","mean_rain$cur_mean <- 1"
+"0","mean_rain"

@@ -1,0 +1,13 @@
+name: vancouver_rain
+title: vancouver_rain
+username:
+account: mlaricheva
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5212773
+bundleId: 5300732
+url: https://mlaricheva.shinyapps.io/vancouver_rain/
+when: 1638072294.2693
+lastSyncTime: 1638072294.26931
+asMultiple: FALSE
+asStatic: FALSE
