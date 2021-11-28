@@ -13,13 +13,16 @@ ui <- fluidPage(
            based on Environment and Climate Change Canada data')),
     sidebarLayout(
         sidebarPanel(
+            
             ### input element for month
             selectInput("month", label = h4("Select Month"), 
                         choices = setNames(as.list(1:12), month.name), 
                         selected = 1),
+            
             ### input element for year
             sliderInput("year", label = h4("Select Year"), min = 1972, 
                         max = 2021, value = 2020, sep ='', step = 1),
+            
             ### input whether to show mean month value
             checkboxInput("checkbox", label = "Add mean values for that month", value = TRUE),
         ),
@@ -55,7 +58,7 @@ server <- function(input, output) {
         }
     })
     
-    ### name month to put into the plot description
+    ### month name to put in the plot description
     month_name <- reactive({
         month_name <- month.name[as.numeric(input$month)]
     })
@@ -80,10 +83,14 @@ server <- function(input, output) {
                            as.character(input$year), ### add year
                            sep="")
              ) +
-        geom_hline(aes(yintercept = mean_rain()$mean), color = "darkred", linetype = 2) +
+        
+        ### global mean line
+        geom_hline(aes(yintercept = mean_rain()$mean), color = "darkred", linetype = 2) + 
         geom_text(aes(x = min(as.Date(date)) + 10, y = mean_rain()$mean), 
-                  label = paste("mean precipitation for", as.character(month_name())), vjust = -0.5, color="darkred")  
-        +   
+                  label = paste("mean precipitation for", as.character(month_name())), 
+                  vjust = -0.5, color="darkred") + 
+        
+        ### local mean line
         geom_hline(aes(yintercept = mean_rain()$cur_mean), color = "slategrey", linetype = 2) + 
         geom_text(aes(x = max(as.Date(date)) - 10, y = mean_rain()$cur_mean), 
                   label = paste("mean precipitation in ", as.character(month_name()), ", ", 
