@@ -19,6 +19,7 @@ Waffle plot shows how many days had at least some amount of rain. There are four
 - some rain (less than 10 mm);
 - moderate rain (less than 20 mm); 
 - heavy rain (more than 20 mm).  
+
 The legend corresponds to the one used in the [Climate Atlas](https://climateatlas.ca/map/canada/precip10_2060_85).  
 This tab also calculates the longest strike of rain and no-rain as the longest number of consequitive days with the same weather (meaning rain or no-rain).
 
