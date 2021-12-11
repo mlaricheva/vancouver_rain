@@ -68,10 +68,10 @@ ui <- fluidPage(
                             ### description
                             p(HTML('<p style="font-size:24px; text-align: center;">What is precipitation?</p>')),
                             p('Precipitation is a standard rainfall measure, that is is expressed in terms of the vertical depth 
-                                to which water from it would stand on a level surface area if all the water from it were collected on this surface.
-                                Usually, a circular funnel with a diameter of 203 mm (or 8-inch rain gauge) is used for this purpose.
-                                Values provided here are measured across several weather stations and then averaged. 
-                                With some degree of accuracy, we can covert precipiation to volume metrics'),
+                                to which water from the rain would stand on a level surface area if all the water from it were collected on this surface.
+                                Usually, a circular funnel with a diameter of 203 mm (or 8-inch rain gauge) is used for the water collection.
+                                Precipitation values provided here are measured across several weather stations and then averaged. 
+                                When the area is know, we can also covert precipiation to water volume metrics with some degree of accuracy'),
                             
                             ### precipitation volume text
                             uiOutput("rainfall"),
@@ -170,7 +170,7 @@ server <- function(input, output) {
         
         ### joining together text summary
         rainfall <- p(HTML(glue('Given the Vancouver area of 114 square kilometres 
-        (or 44 square miles, we can get the rainfall volume of 
+        (or 44 square miles), we get the rainfall volume of 
         <span style="color:#34393f; font-weight:bold; font-size:20px">{metric} </span>')))
     })
     
