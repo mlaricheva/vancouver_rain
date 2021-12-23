@@ -24,4 +24,15 @@ The legend corresponds to the one used in the [Climate Atlas](https://climateatl
 
 This tab also calculates the longest strike of rain and no-rain as the longest number of consequitive days with the same weather (the classification used is binary).
 
+### Improvements 
 
+The link to the previous version: https://mlaricheva.shinyapps.io/vancouver_rain
+
+1. Total precipitation is calculated for the selected month.
+![image](https://user-images.githubusercontent.com/47871121/147277468-72614800-0b7c-46d5-a56b-dc240c025566.png)
+2. The explanation of precipitation is given including the transformation to different volume measures (m3, oil barrels, gallons) and tons.
+![image](https://user-images.githubusercontent.com/47871121/147277527-292ef187-43a1-42c3-9a7b-6c7bcc33c37d.png)
+3. The waffle chart shows number of days with or without rain in the selected month
+![image](https://user-images.githubusercontent.com/47871121/147277605-639fee20-63bb-4da0-b89e-c4270f6fda5a.png)
+4. The longest periods with or without rain are dynamically calculated.
+![image](https://user-images.githubusercontent.com/47871121/147277632-5d993039-3c6e-488d-8bf8-175eeec48d6b.png)
